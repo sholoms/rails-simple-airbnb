@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>RailsSimpleAirbnb</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,17 @@
   </head>
 
   <body>
+  <div class='navbar navbar-light bg-light'>
+    <%= link_to 'Flairbnb', flats_path, class: 'navbar-brand' %>
+    <div class='d-flex'>
+      <form class="form-inline" action="/flats">
+        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Search</button>
+      </form>
+      <%= link_to 'New Flat', new_flat_path, class: 'btn btn-outline-primary my-2 my-sm-0'%>
+    </div>
+
+  </div>
     <%= yield %>
   </body>
 </html>
